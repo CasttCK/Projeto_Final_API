@@ -15,6 +15,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.serratec.api.model.Produto;
+import br.com.serratec.api.repository.ProdutoRepository;
+import br.com.serratec.api.service.ProdutoService;
+
 @RestController
 @RequestMapping("/produtos")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -62,12 +66,6 @@ public class ProdutoController {
 	public ResponseEntity<Produto> putProduto(@PathVariable long idProduto, @PathVariable long idPedido/*, @PathVariable int qtdProduto*/) {
 		
 		return ResponseEntity.ok(service.compraProduto(idProduto, idPedido/*, qtdProduto*/));
-	}
-	
-	@PutMapping("/produto_lista/produtos/{idProduto}/listaDesejos/{idListaDeDesejo}")
-	public ResponseEntity<Produto> adicionaProdutoListaDeDesejos(@PathVariable long idProduto, @PathVariable long idListaDeDesejo) {
-		
-		return ResponseEntity.ok(service.adicionarProdutoListaDeDesejo(idProduto, idListaDeDesejo));
 	}
 	
 	@DeleteMapping("/{id}")

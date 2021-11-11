@@ -14,8 +14,6 @@ import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.sun.istack.NotNull;
 
-import br.com.helpconnect.LojaVirtual.model.Produto;
-
 @Entity
 @Table(name = "categoria")
 public class Categoria {

@@ -1,18 +1,13 @@
 package br.com.serratec.api.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.Optional;
 
-import br.com.serratec.api.repository.PedidoRepository;
-import br.com.serratec.api.repository.UsuarioRepository;
+import br.com.serratec.api.model.UsuarioLogin;
 
 public class UsuarioService {
 
-	@Autowired
-	private UsuarioRepository usuarioRepository;
+	public Optional<UsuarioLogin> Logar(Optional<UsuarioLogin> user) {
+		return null;
+	}
 	
-	@Autowired
-	private PedidoRepository pedidoRepository;
-	
-	@Autowired
-	private ListaDeDesejosRepository listaDeDesejosRepository;
 }

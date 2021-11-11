@@ -1,7 +1,5 @@
 package br.com.serratec.api.model;
 
-import br.com.helpconnect.LojaVirtual.model.Pedido;
-
 public class UsuarioLogin {
 
 	private long id;
@@ -193,13 +191,5 @@ public class UsuarioLogin {
 
 	public void setPedidos(Pedido pedidos) {
 		this.pedidos = pedidos;
-	}
-
-	public ListaDeDesejos getListaDeDesejos() {
-		return listaDeDesejos;
-	}
-
-	public void setListaDeDesejos(ListaDeDesejos listaDeDesejos) {
-		this.listaDeDesejos = listaDeDesejos;
 	}
 }

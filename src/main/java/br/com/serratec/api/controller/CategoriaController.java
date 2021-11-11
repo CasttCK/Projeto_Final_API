@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.helpconnect.LojaVirtual.model.Categoria;
-import br.com.helpconnect.LojaVirtual.repository.CategoriaRepository;
+import br.com.serratec.api.model.Categoria;
+import br.com.serratec.api.repository.CategoriaRepository;
 
 @RestController
 @RequestMapping("/categorias")

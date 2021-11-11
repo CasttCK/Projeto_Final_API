@@ -20,9 +20,6 @@ import javax.persistence.TemporalType;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import br.com.helpconnect.LojaVirtual.model.Cliente;
-import br.com.helpconnect.LojaVirtual.model.Produto;
-
 @Entity
 @Table(name = "pedido")
 public class Pedido {
@@ -42,14 +39,11 @@ public class Pedido {
 	@JsonIgnoreProperties({"nome", "descricao", "marca", "img", "preco", "estoque", "categoria", "pedidos", "qtdPedidoProduto", "listaDesejos"})
 	private List<Produto> produtos = new ArrayList<>();
 	
-	/*@ManyToOne
-	@JsonIgnoreProperties("pedidos")
-	private Cliente cliente;*/
 	@OneToOne
     @MapsId
-    @JoinColumn(name = "cliente_id")
+    @JoinColumn(name = "usuario_id")
 	@JsonIgnoreProperties("pedidos")
-	private Cliente cliente;
+	private Usuario usuario;
 
 	public long getId() {
 		return id;
@@ -75,12 +69,12 @@ public class Pedido {
 		this.valorTotal = valorTotal;
 	}
 
-	public Cliente getCliente() {
-		return cliente;
+	public Usuario getUsuario() {
+		return usuario;
 	}
 
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
+	public void setCliente(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
 	public List<Produto> getProdutos() {

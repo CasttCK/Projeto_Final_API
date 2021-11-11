@@ -21,10 +21,6 @@ import org.hibernate.validator.constraints.URL;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import br.com.helpconnect.LojaVirtual.model.Categoria;
-import br.com.helpconnect.LojaVirtual.model.ListaDeDesejos;
-import br.com.helpconnect.LojaVirtual.model.Pedido;
-
 @Entity
 @Table(name = "produto")
 public class Produto {
@@ -76,8 +72,6 @@ public class Produto {
 	  joinColumns = @JoinColumn(name = "produto_id"),
 	  inverseJoinColumns = @JoinColumn(name = "lista_id")
 	)
-	@JsonIgnoreProperties({"produtos", "cliente"})
-	private List<ListaDeDesejos> listaDesejos = new ArrayList<>();
 	
 	public long getId() {
 		return id;
@@ -157,14 +151,6 @@ public class Produto {
 
 	public void setPedidos(List<Pedido> pedidos) {
 		this.pedidos = pedidos;
-	}
-
-	public List<ListaDeDesejos> getListaDesejos() {
-		return listaDesejos;
-	}
-
-	public void setListaDesejos(List<ListaDeDesejos> listaDesejos) {
-		this.listaDesejos = listaDesejos;
 	}
 	
 }

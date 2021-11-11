@@ -15,6 +15,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.serratec.api.model.Pedido;
+import br.com.serratec.api.model.Produto;
+import br.com.serratec.api.repository.PedidoRepository;
+import br.com.serratec.api.service.ProdutoService;
+
 
 @RestController
 @RequestMapping("/pedidos")
