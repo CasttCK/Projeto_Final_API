@@ -33,7 +33,7 @@ public class ConfigSegurancaBasica extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-		.antMatchers("/**").permitAll()
+		.antMatchers("/h2-console/**").permitAll()
 		.antMatchers("/clientes/logar").permitAll()
 		.antMatchers("/clientes/cadastrar").permitAll()
 		.antMatchers(HttpMethod.GET, "/clientes").permitAll()
@@ -46,8 +46,7 @@ public class ConfigSegurancaBasica extends WebSecurityConfigurerAdapter {
 		.and().sessionManagement()
 		.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 		.and().cors()
-		.and().csrf().disable();
-		
+		.and().csrf().disable().headers().frameOptions().sameOrigin();	
 	}
 }
 
