@@ -21,7 +21,7 @@ public class SwaggerConfig {
 		return new Docket(DocumentationType.SWAGGER_2)
 			.select()
 			.apis( RequestHandlerSelectors.basePackage
-			("br.com.helpconnect.LojaVirtual.controller") )
+			("br.com.serratec.api.controller") )
 			.paths(PathSelectors.any())
 			.build()
 			.apiInfo(apiInfo());	
@@ -30,8 +30,8 @@ public class SwaggerConfig {
 	
 	private ApiInfo apiInfo() {
 		return new ApiInfoBuilder()
-			.title("API - Loja Virtual")
-			.description("API para compor aplicações WEB Spring/Java/MySQL")
+			.title("API - E-commerce Serratec")
+			.description("API para compor aplicações WEB Spring/Java")
 			.version("1.0")
 			.contact(contact())
 			.build();
@@ -39,9 +39,9 @@ public class SwaggerConfig {
 	}
 	
 	private Contact contact() {
-		return new Contact("Kevin Alec Neri Lazzarotto",
-			"https://github.com/Clamant96",
-			"Estudante em ADS | Desenvolvedor Web Java Junior Full Stack");
+		return new Contact("Vinicius Corrêa Kronemberger",
+			"https://github.com/CasttCK",
+			"Estudante de Ciência da computação | Residente de desenvolvimento Full Stack no Serratec - Petrópolis");
 		
 	}
 }
