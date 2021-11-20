@@ -15,10 +15,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+//import br.com.serratec.api.config.MailConfig;
 import br.com.serratec.api.model.Usuario;
 import br.com.serratec.api.model.UsuarioLogin;
 import br.com.serratec.api.repository.UsuarioRepository;
 import br.com.serratec.api.service.UsuarioService;
+
 
 @RestController
 @RequestMapping("/usuario")
@@ -30,6 +32,14 @@ public class UsuarioController {
 	@Autowired
 	private UsuarioRepository usuarioRepository;
 	
+	/*
+	@Autowired
+	public MailConfig mailConfig;
+	
+	private void mailConfig(String para, String assunto, String texto) {
+	}
+	*/
+
 	@PostMapping("/logar")
 	public ResponseEntity<UsuarioLogin> Autentication(@RequestBody Optional<UsuarioLogin> user) {
 		return service.Logar(user).map(resp -> ResponseEntity.ok(resp))
@@ -45,8 +55,11 @@ public class UsuarioController {
 	@PostMapping("/cadastrar")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Usuario adicionar(@RequestBody Usuario usuario) {
-		return usuarioRepository.save(usuario);
+	return usuarioRepository.save(usuario);
+	//mailConfig(usuario.getEmail(), "Cadastro de usuário", usuario.toString());
+	//return usuario;
 	}
+
 	
 	@DeleteMapping("/{id}")
 	public void deletaCliente(@PathVariable long id) {
